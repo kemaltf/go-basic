@@ -1,4 +1,4 @@
-module example/hello
+module github.com/kemaltf/go-basic
 
 go 1.24.3
 
