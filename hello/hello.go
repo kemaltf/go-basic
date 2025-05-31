@@ -8,17 +8,27 @@ import (
 )
 
 func main() {
-    // Get a greeting message and print it.
-    message, _ := greetings.Hello("Gladys")
-    fmt.Println(message)
+	// // Set properties of the predefined Logger, including
+	// // the log entry prefix and a flag to disable printing
+	// // the time, source file, and line number.
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
 
-    // Request a greeting
-    messageError, err2 := greetings.Hello("")
-    fmt.Println(messageError, err2)
+	// Get a greeting message and print it.
+	message, err := greetings.Hello("Gladys")
 
-    // If an error was returned, print it to the console and
-    // exit the program.
-    if err2 != nil {
-        log.Fatal(err2)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(message)
+	// Request a greeting
+	// messageError, err2 := greetings.Hello("")
+	// fmt.Println(messageError, err2)
+
+	// If an error was returned, print it to the console and
+	// exit the program.
+	// if err2 != nil {
+	// 	log.Fatal(err2)
+	// }
 }
