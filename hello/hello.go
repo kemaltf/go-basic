@@ -14,6 +14,15 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
+	// A slice of names.
+	names := []string{"Gladys", "Samantha", "Darrin"}
+	// Request greeting messages for the names.
+	messages2, err := greetings.Hellos(names)
+
+	// If no error was returned, print the returned map of
+	// messages to the console.
+	fmt.Println(messages2)
+
 	// Get a greeting message and print it.
 	message, err := greetings.Hello("Gladys")
 
